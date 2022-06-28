@@ -1,24 +1,34 @@
-# Internship : Predict apple trees flowering date from images
+# Predict apple trees flowering dates from images
 
-My goal is to predict apple trees flowering dates from images. I use convolutional network architectures to make these predictions.
+The goal is to predict apple trees flowering dates from images. I use convolutional network architectures to make these predictions.
 
 #### -- Project Status: [Active]
 
 ## About the project
 
-My goal is to predict dates of apple trees flowering dates from images captured by a drone in June, September, October and November 2021. For each month, an orthomosaic gathering all the images taken during a capture was constituted. 
+My goal is to predict apple trees flowering dates from images captured by a drone in differents month. For each month, an orthomosaic gathering all the images taken during a capture was constituted. 
 
-The first part of my work is to constitute a data set from these orthomosaics such as each tree is characterized by an image (what I call a patch) for each month. 
+1. The first part of the work is to constitute a dataset from these orthomosaics such as each tree is characterized by an image (what I call a patch) for each month. 
 
-The second part is to optimize an architecture of deep neural network to predict the flowering dates. 
+2. The second part is to increases the number of images in the dataset (data augmentation).
+
+3. The third part is to train an architecture of convolutional neural network.
+
+4. The last part is to give a flowering of each trees from an orthomosaic or the flowering date for a trees image given.
+
 
 ### Methods Used
-* Deep learning (CNN)
-* Machine Learning (Linear model, randomforest, lasso)
-* Data Visualization
+* Map lambert-93 coordinates to numpy coordinates [library : gdal, numpy]
+* Deep learning (CNN) [library : Tensorflow]
 
 ### Prerequisites
 * Python 3
+    * numpy
+    * pandas 
+    * opencv
+    * imageio
+    * gdal
+    * tensorflow 2+
 
 #### internship tutors:
 
@@ -26,6 +36,4 @@ The second part is to optimize an architecture of deep neural network to predict
 |---------|
 |[Frédéric Boudon](https://github.com/fredboudon])
 |[Emmanuel Faure](https://gitlab.inria.fr/efaure/morpholab]) 
-
-## Contact
-* Vous pouvez me contacter, [par mail]().  
+  
