@@ -23,7 +23,7 @@ def R2(X,y):
 
 
 def indices_mean(data:pd.DataFrame, func, printer=False):
-    # calcul le NDRE et NDVI pixel a pixel, puis une fonction func (moyenne/std) pour une imag #
+    """ calcul le NDRE et NDVI pixel a pixel, puis une fonction func (moyenne/std) pour une imag """
     
     for mois in data.columns[data.columns.str.contains("ms")]:
         data["NDRE_"+ mois] = data[mois].apply(NDRE).apply(func)
@@ -68,7 +68,7 @@ def splitter_ML(data:pd.DataFrame):
 
 
 def opti_lasso(X_train, y_train, X_val, y_val):
-    # Optimise le paramètre de régularisation d'une régression lasso, la range est défini  (0.0000001, 0.1, 0.0001) #
+    """ Optimise le paramètre de régularisation d'une régression lasso, la range est défini  (0.0000001, 0.1, 0.0001) """
     
     alpha_value, MSE_score = [], []
 
@@ -83,7 +83,7 @@ def opti_lasso(X_train, y_train, X_val, y_val):
 
 
 def opti_RF(X_train, y_train, X_val, y_val):
-    # Optimise le nombre d'arbre d'une régression par RF, le nombre de seuil est fixé au maxium a 10 #
+    """ Optimise le nombre d'arbre d'une régression par RF, le nombre de seuil est fixé au maxium a 10 """
     
     number_tree, MSE_score = [], []
 
@@ -101,7 +101,7 @@ def opti_RF(X_train, y_train, X_val, y_val):
 
 
 def plot_pred(modele, X, y):   
-    # Plot les observations et prédictions d'un modèle #
+    """ Plot les observations et prédictions d'un modèle """
 
     for model,color in zip(modele, ["orange", "skyblue", "darkorchid"]):
         plt.scatter(y=y,x=model.predict(X), c=color)
